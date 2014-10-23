@@ -23,9 +23,4 @@ public class FieldSearch {
 		return T;
 	}
 //should return an array of string/field results for matches found in database	
-	
-	
-	public static void main(String[] args) {
-		
-	}
 }
