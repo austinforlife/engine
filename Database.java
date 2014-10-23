@@ -35,14 +35,10 @@ public class Database<E,T> {
 		storage.clear();
 	}
 	// search for word, returning (path, word)
-	public String get(String word) {
-		for ( String i : storage.keySet()) { 
-			if (storage.get(i) == word)  { 
-				return i;
-			}
-		} 
-		return null;
+	public HashMap<String,String> get() {
+		return storage;
 	}
+		
 	// show all Path in database
 	public Set<String> showallPath() {
 		// throw exception if empty

@@ -4,23 +4,30 @@ import org.uiowa.cs2820.engine.Database;
 import org.uiowa.cs2820.engine.Field;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class FieldSearch {
-	private ArrayList<String> T;  //should be ArrayList<Field>
+	
+	
+	private ArrayList<String> Result; 
+	private Database<Field,Field> DB;
 
+	// Constructor
 	public FieldSearch() {
-		T = new ArrayList<String>();
+		DB = new Database<Field, Field>();
 	}
-	
-	public ArrayList<String> getT() {
-		return T;
+	// Method to return result
+	public ArrayList<String> getResult() {
+		return Result;
 	}
-	
-//being passed a field
+	// Returns all the 'documents' with matching field
 	public ArrayList<String> FindEquals(Field f) {
-		Database<Field,Field> S = new Database<Field, Field>();
-		T.add(S.get(f.getFieldValue())); 	
-		return T;
+		HashMap<String,String> HM = DB.get();
+		for ( String i: HM.keySet()) {
+			if (HM.get(i).contains(f.getFieldName()) && HM.get(i).contains(f.getFieldValue())) {
+				Result.add(i);
+			}
+		}	
+		return Result;
 	}
-//should return an array of string/field results for matches found in database	
 }
