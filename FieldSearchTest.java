@@ -17,12 +17,13 @@ public class FieldSearchTest {
 		//test the constructor
 		Database D = new Database();
 		FieldSearch FS = new FieldSearch(D);
-		ArrayList< String > S = new ArrayList< String >();
+		ArrayList<String> S = new ArrayList<String>();
 		assertEquals( FS.getResult(), S);
 		
 	}
 	@Test
 	public void test1() {
+		//test that findEquals returns 
 		Database D = new Database();
 		FieldSearch T = new FieldSearch(D);
 		Field F = new Field( "1", "Hello" );

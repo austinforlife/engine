@@ -2,9 +2,19 @@ package org.uiowa.cs2820.engine;
 
 import org.uiowa.cs2820.engine.Database;
 import org.uiowa.cs2820.engine.Field;
-
 import java.util.ArrayList;
 import java.util.HashMap;
+
+// Austin Washburn
+// 24 Oct 2014
+// Project 4: FieldSearch
+
+// Team 4
+// Carter Davis    -   Indexer
+// Chong Meng Chua -   Database
+// Tim Miller      -   Field
+
+
 
 public class FieldSearch {
 	
