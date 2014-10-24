@@ -9,25 +9,27 @@ import java.util.HashMap;
 public class FieldSearch {
 	
 	
-	private ArrayList<String> Result; 
-	private Database<Field,Field> DB;
+	public ArrayList<String> Result; 
+	public Database<Field,Field> DB;
 
 	// Constructor
-	public FieldSearch() {
-		DB = new Database<Field, Field>();
+	public FieldSearch(Database<Field, Field> D) {
+		this.DB = D;
+		this.Result = new ArrayList<String>();
 	}
 	// Method to return result
 	public ArrayList<String> getResult() {
 		return Result;
 	}
 	// Returns all the 'documents' with matching field
-	public ArrayList<String> FindEquals(Field f) {
+	public ArrayList<String> findEquals(Field f) {
 		HashMap<String,String> HM = DB.get();
 		for ( String i: HM.keySet()) {
-			if (HM.get(i).contains(f.getFieldName()) && HM.get(i).contains(f.getFieldValue())) {
-				Result.add(i);
+			if (HM.get(i) == (f.getFieldValue())) {
+				Result.add(HM.get(i));
 			}
-		}	
+		} 
 		return Result;
 	}
+
 }
